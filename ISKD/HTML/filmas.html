@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Filmas</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="CSS/svetaine.css">
+        <link rel="shortcut icon" type="image/x-icon" href="photos/icon.jpg"/>
+    </head>
+    <body>
+        <div id="top-bar">
+            <div id="header">
+                <h1>CINEO</h1>
+            </div>
+            <div id="menu">
+                <div class="menu-toggle" id="menuToggle">☰</div>
+                <ul>
+                    <li><a href="pagrindinis.html">Pagrindinis</a></li>
+                    <li><a href="filmai.html">Filmai</a></li>
+                    <li><a href="serialai.html">Serialai</a></li>
+                    <li><a href="anketa.html">Pasiūlymai</a></li>
+                    <div id="mode-switch">
+                        <span class="mode-label">Šviesusis režimas</span>
+                        <label class="switch">
+                            <input type="checkbox" id="modeToggle">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </ul>
+            </div> 
+        </div>
+        <div id="content">
+                <div class="left_column">
+                    <h2>PIETINIA KRONIKAS</h2>
+                    <img src="photos/filmai/pietiniakronikos.jpg" alt="pietiniakronikos">
+                    <figcaption style="margin-left: 35%; margin-top: 5%; color: #a5a5a5; font-weight: bold;">2024 · 2h</figcaption>
+                    <button id="button2" style="margin: 70px;">Pridėti +</button>
+                </div>
+                <div class="right_column">
+                    <div>
+                        <iframe
+                            src="https://www.youtube.com/embed/DnK2Gt8EtEA" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+
+                        <article>
+                                <p>Kultinis šiauliečia Rimanta Kmitos romans „Pietinia kronikas“ kelias į kina ekranus.
+                                Paskutinis XX a. dešimtmetis. Vandamų ir Švarcų miestu vadinamu Šiaulių Pietiniam rajone
+                                gyven rimts bachūrs Rimants (aktorius Džiugas Grinys). Kaip normalus bahūrs, jisai nešioj
+                                treningus, per šventes i kožą užsivelk, su draugeliu Minde (akt. Robertas Petraitis)
+                                šmutkes stumda i žaidž regbį, nors mamike dėl to sporta pergyven kaip velns. Bet nu,
+                                kaip jis pats saka, ką čia gali daugiau veikt be regbia?</p>
+                        </article>
+
+                        <div class="r">
+                            <div class="rating">
+                                <figcaption style="font-size: 40px; margin-bottom: 25px;"><span style="color: goldenrod;">★</span> 4<span style="font-size: 18px; color: #a5a5a5;">/5   3.1K</span></figcaption>
+                            </div>
+
+                            <div class="info">
+                                <ul>
+                                    <li><span style="color: #797979;">Režisierius</span> Ignas Miškinis</li> <br>
+                                    <li><span style="color: #797979;">Rašytojai</span> Rimantas Krima · Eglė Vertelytė</li> <br>
+                                    <li><span style="color:#797979">Vaidina</span> Džiugas Grainys · Robertas Petraitis · Digna Kulionytė</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="inform">
+
+                        </div>
+
+                        <div class="comments">
+                            <h4>Palik savo komentarą:</h4>
+                            <form id="commentForm">
+                                <textarea id="commentInput" rows="4" cols="50" placeholder="Įvesk savo komentarą..."></textarea><br>
+                                <button id="button2" type="submit">Siųsti</button>
+                            </form>
+                                
+                            <div class="comment">
+                                <h4>Komentarai:</h4>
+                                <ul id="commentList"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div id="footer">
+            <address>2025 Gabrielė Šiaudvytytė</address>
+        </div>
+    </body>
+    <script>
+        const toggle = document.getElementById('modeToggle');
+        const label = document.querySelector('.mode-label');
+        const body = document.body;
+
+        if(localStorage.getItem('lightMode') === 'on') {
+            body.classList.add('light-mode');
+            toggle.checked = true;
+            label.textContent = "Tamsusis režimas";
+        } else {
+            label.textContent = "Šviesusis režimas";
+        }
+
+        toggle.addEventListener('change', () => {
+            body.classList.toggle('light-mode');
+
+            if(toggle.checked){
+                label.textContent = "Tamsusis režimas";
+                localStorage.setItem('lightMode', 'on');
+            } else {
+                label.textContent = "Šviesusis režimas";
+                localStorage.setItem('lightMode', 'off');
+            }
+        });
+
+        const form = document.getElementById("commentForm");
+        const input = document.getElementById("commentInput");
+        const list = document.getElementById("commentList");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const text = input.value.trim();
+            if (text !== "") {
+                const li = document.createElement("li");
+                li.classList.add("comment");
+
+                const img = document.createElement("img");
+                img.src = "photos/userPhoto.jpg";
+                img.alt = "userPhoto";
+                img.classList.add("comment-img");
+
+                const textWrapper = document.createElement("div");
+                textWrapper.classList.add("comment-text");
+
+                const username = document.createElement("span");
+                username.classList.add("username");
+                username.textContent = "Anonimas";
+
+                const commentText = document.createElement("p");
+                commentText.textContent = text;
+
+                textWrapper.appendChild(username);
+                textWrapper.appendChild(commentText);
+
+                li.appendChild(img);
+                li.appendChild(textWrapper);
+
+                list.appendChild(li);
+
+                input.value = "";
+            }
+        });
+
+        const menuToggle = document.getElementById('menuToggle');
+        const menuList = document.querySelector('#menu ul');
+
+        menuToggle.addEventListener('click', () => {
+            menuList.classList.toggle('show');
+        });
+    </script>
+</html>

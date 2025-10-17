@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Anketa</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="CSS/svetaine.css">
+        <link rel="shortcut icon" type="image/x-icon" href="photos/icon.jpg"/>
+    </head>
+    <body>
+        <div id="top-bar">
+            <div id="header">
+                <h1>CINEO</h1>
+            </div>
+            <div id="menu">
+                <div class="menu-toggle" id="menuToggle">☰</div>
+                <ul>
+                    <li><a href="pagrindinis.html">Pagrindinis</a></li>
+                    <li><a href="filmai.html">Filmai</a></li>
+                    <li><a href="serialai.html">Serialai</a></li>
+                    <li><a href="anketa.html">Pasiūlymai</a></li>
+                    <div id="mode-switch">
+                        <span class="mode-label">Šviesusis režimas</span>
+                        <label class="switch">
+                            <input type="checkbox" id="modeToggle">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </ul>
+            </div> 
+        </div>
+        
+        <div id="content">
+            <div class="left_column">
+                <h3>Aktualu</h3>
+                <p><b>The Conjuring: Last Rites</b> – rugsėjo 5 d., 2025</p>
+                <p><b>A Big Bold Beautiful Journey</b> – rugsėjo 18 d., 2025</p>
+                <p><b>Stranger Things 5</b> – lapkričio 26 d., 2025</p>
+                <p><b>Downton Abbey: The Grand Finale</b> – gruodžio 12 d., 2025</p>
+                <p><b>Avengers: Doomsday</b> – gegužės 2 d., 2026</p>
+            </div>
+
+            <div class="right_column">
+                <h2>FILMŲ/ SERIALŲ PASIŪLYMAI</h2>
+                <form id="suggestionForm">                
+                    <input type="text" name="vardas" required placeholder="Vardas" class="form"> <br>
+                    <input type="text" name="pavarde" required placeholder="Pavardė" class="form"> <br>
+                    <input type="email" name="elpastas" size="40" required placeholder="El. paštas" class="form"> <br>
+                    <input type="text" name="pasiulymas" required placeholder="Jūsų pasiūlymas" class="form"> <br>
+
+                    <button id="button2" type="submit">Patvirtinti</button>
+                </form>
+
+                <p id="message" style="display:none; color:#FF5100; font-weight:bold; margin:10px;"></p>
+            </div>
+        </div>
+        <div id="footer">
+            <address>2025 Gabrielė Šiaudvytytė</address>
+        </div>
+    </body>
+    <script>
+        const toggle = document.getElementById('modeToggle');
+        const label = document.querySelector('.mode-label');
+        const body = document.body;
+
+        if(localStorage.getItem('lightMode') === 'on') {
+            body.classList.add('light-mode');
+            toggle.checked = true;
+            label.textContent = "Tamsusis režimas";
+        } else {
+            label.textContent = "Šviesusis režimas";
+        }
+
+        toggle.addEventListener('change', () => {
+            body.classList.toggle('light-mode');
+
+            if(toggle.checked){
+                label.textContent = "Tamsusis režimas";
+                localStorage.setItem('lightMode', 'on');
+            } else {
+                label.textContent = "Šviesusis režimas";
+                localStorage.setItem('lightMode', 'off');
+            }
+        });
+
+        const form = document.getElementById("suggestionForm");
+        const message = document.getElementById("message");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            message.textContent = "Pasiūlymas pateiktas!";
+            message.style.display = "block";
+
+            form.reset();
+        });
+
+        const menuToggle = document.getElementById('menuToggle');
+        const menuList = document.querySelector('#menu ul');
+
+        menuToggle.addEventListener('click', () => {
+            menuList.classList.toggle('show');
+        });
+    </script>
+</html>

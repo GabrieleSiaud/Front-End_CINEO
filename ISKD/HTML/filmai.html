@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Filmai</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="CSS/svetaine.css">
+        <link rel="shortcut icon" type="image/x-icon" href="photos/icon.jpg"/>
+    </head>
+    <body>
+        <div id="top-bar">
+            <div id="header">
+                <h1>CINEO</h1>
+            </div>
+            <div id="menu">
+                <div class="menu-toggle" id="menuToggle">☰</div>
+                <form id="search-form" action="paieska.html" method="get">
+                    <input id="place" type="text" name="q" placeholder="Ieškoti...">
+                    <button id="button" type="submit">🔍︎</button>
+                </form>
+                <ul>
+                    <li><a href="pagrindinis.html">Pagrindinis</a></li>
+                    <li><a href="filmai.html">Filmai</a></li>
+                    <li><a href="serialai.html">Serialai</a></li>
+                    <li><a href="anketa.html">Pasiūlymai</a></li>
+                    <div id="mode-switch">
+                        <span class="mode-label">Šviesusis režimas</span>
+                        <label class="switch">
+                            <input type="checkbox" id="modeToggle">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </ul>
+            </div> 
+        </div>
+
+        <div id="content">
+            <div class="left_column">
+                <h3>Aktualu</h3>
+                <p><b>The Conjuring: Last Rites</b> – rugsėjo 5 d., 2025</p>
+                <p><b>A Big Bold Beautiful Journey</b> – rugsėjo 18 d., 2025</p>
+                <p><b>Stranger Things 5</b> – lapkričio 26 d., 2025</p>
+                <p><b>Downton Abbey: The Grand Finale</b> – gruodžio 12 d., 2025</p>
+                <p><b>Avengers: Doomsday</b> – gegužės 2 d., 2026</p> <br>
+                <div class="watchlist">
+                    <h3>Mano sąrašas</h3>
+                    <p>Pietinia Kronikas</p>
+                    <p>Fantastic four</p>
+                    <p>Weapons</p>
+                    <p>Kempiniukas</p>
+                    <button id="button2">Pridėti daugiau +</button>
+                </div>
+            </div>
+            <div class="right_column">
+                <div id="search-result" style="display:none;">
+                    <h2>Paieškos rezultatas</h2>
+                    <article id="search-posters"></article>
+                </div>
+
+                <h2>KOMEDIJA</h2>
+                <article>
+                    <figure class="poster" data-title="pietinia kronikas">
+                        <a href="filmas.html">
+                            <img src="photos/filmai/pietiniakronikos.jpg" alt="pietiniakronikos">
+                        </a>
+                        <figcaption>Pietinia kronikas</figcaption>
+                        <figcaption><span class="star">★ ★ ★ ★ ★</span></figcaption>
+                    </figure>
+                    <figure class="poster" data-title="freaky friday">
+                        <img src="photos/filmai/friday.jpg" alt="freakyfriday">
+                        <figcaption>Freaky friday</figcaption>
+                        <figcaption><span class="star">★ ★ ★</span></figcaption>
+                    </figure>
+                    <figure class="poster" data-title="what do we do in the shadows">
+                        <img src="photos/filmai/shadows.jpg" alt="whatdowedointheshadows">
+                        <figcaption>What do we do in the shadows</figcaption>
+                        <figcaption><span class="star">★ ★ ★ ★</span></figcaption>
+                    </figure>
+                </article>
+
+                <h2>VEIKSMO</h2>
+                <article>
+                    <figure class="poster" data-title="fantastic four">
+                        <img src="photos/filmai/fantasticfour.jpg" alt="fantasticfour">
+                        <figcaption>Fantastic four</figcaption>
+                        <figcaption><span class="star">★ ★ ★ ★</span></figcaption>
+                    </figure>
+                    <figure class="poster" data-title="jurrastic park">
+                        <img src="photos/filmai/jurassicpark.jpg" alt="jurassicpark">
+                        <figcaption>Jurassic park</figcaption>
+                        <figcaption><span class="star">★ ★ ★ ★</span></figcaption>
+                    </figure>
+                    <figure class="poster" data-title="gladiator">
+                        <img src="photos/filmai/gladiator.jpg" alt="gladiator">
+                        <figcaption>Gladiator</figcaption>
+                        <figcaption><span class="star">★ ★ ★ ★ ★</span></figcaption>
+                    </figure>
+                </article>
+
+                <h2>ROMANTINIAI</h2>
+                <article>
+                    <figure class="poster" data-title="titanic">
+                        <img src="photos/filmai/titanic.jpg" alt="titanic"> 
+                        <figcaption>Titanic</figcaption>
+                        <figcaption><span class="star">★ ★ ★ ★ ★</span></figcaption>
+                    </figure>
+                    <figure class="poster" data-title="materelist">
+                        <img src="photos/filmai/materelist.jpg" alt="materelist">
+                        <figcaption>Materelist</figcaption>
+                        <figcaption><span class="star">★ ★ ★ ★</span></figcaption>
+                    </figure>
+                    <figure class="poster" data-title="la la land">
+                        <img src="photos/filmai/lalaland.jpg" alt="lalaland">
+                        <figcaption>La la land</figcaption>
+                        <figcaption><span class="star">★ ★ ★ ★</span></figcaption>
+                    </figure>
+                </article>
+
+                <h2>TRILERIAI</h2>
+                <article>
+                    <figure class="poster" data-title="midsommar">
+                        <img src="photos/filmai/midsommar.jpg" alt="midsommar">
+                        <figcaption>Midsommar</figcaption>
+                        <figcaption><span class="star">★ ★ ★ ★</span></figcaption>
+                    </figure>
+                    <figure class="poster" data-title="akiplesa">
+                        <img src="photos/filmai/toxic.jpg" alt="toxic">
+                        <figcaption>Akiplėša</figcaption>
+                        <figcaption><span class="star">★ ★ ★ ★</span></figcaption>
+                    </figure>
+                    <figure class="poster" data-title="get out">
+                        <img src="photos/filmai/getout.jpg" alt="get out">
+                        <figcaption>Get out</figcaption>
+                        <figcaption><span class="star">★ ★ ★ ★</span></figcaption>
+                    </figure>
+                </article>
+
+                <h2>FUTURISTINIAI</h2>
+                <article>
+                    <figure class="poster" data-title="mickey 17"> 
+                        <img src="photos/filmai/mickey.jpg" alt="mickey17">
+                        <figcaption>Mickey 17</figcaption>
+                        <figcaption><span class="star">★ ★ ★ ★</span></figcaption>
+                    </figure>
+                    <figure class="poster" data-title="conclave">
+                        <img src="photos/filmai/conclave.jpg" alt="conclave">
+                        <figcaption>Conclave</figcaption>
+                        <figcaption><span class="star">★ ★ ★ ★</span></figcaption>
+                    </figure>
+                    <figure class="poster" data-title="dune">
+                        <img src="photos/filmai/dune.jpg" alt="dune">
+                        <figcaption>Dune</figcaption>
+                        <figcaption><span class="star">★ ★ ★ ★ ★</span></figcaption>
+                    </figure>
+                </article>
+
+                <h2>SIAUBO</h2>
+                <article>
+                    <figure class="poster" data-title="consuring">
+                        <img src="photos/filmai/consuring.jpg" alt="consuring">
+                        <figcaption>Consuring</figcaption>
+                        <figcaption><span class="star">★ ★ ★ ★ ★</span></figcaption>
+                    </figure>
+                    <figure class="poster" data-title="evil dead">
+                        <img src="photos/filmai/evildead.jpg" alt="evildead">
+                        <figcaption>Evil dead</figcaption>
+                        <figcaption><span class="star">★ ★ ★ ★ ★</span></figcaption>
+                    </figure>
+                    <figure class="poster" data-title="weapons">
+                        <img src="photos/filmai/weapons.jpg" alt="weapons">
+                        <figcaption>Weapons</figcaption>
+                        <figcaption><span class="star">★ ★ ★ ★</span></figcaption>
+                    </figure>
+                </article>
+            </div>
+        </div>
+        <div id="footer">
+            <address>2025 Gabrielė Šiaudvytytė</address>
+        </div>
+    </body>
+    <script>
+        const toggle = document.getElementById('modeToggle');
+        const label = document.querySelector('.mode-label');
+        const body = document.body;
+
+        if(localStorage.getItem('lightMode') === 'on') {
+            body.classList.add('light-mode');
+            toggle.checked = true;
+            label.textContent = "Tamsusis režimas";
+        } else {
+            label.textContent = "Šviesusis režimas";
+        }
+
+        toggle.addEventListener('change', () => {
+            body.classList.toggle('light-mode');
+
+            if(toggle.checked){
+                label.textContent = "Tamsusis režimas";
+                localStorage.setItem('lightMode', 'on');
+            } else {
+                label.textContent = "Šviesusis režimas";
+                localStorage.setItem('lightMode', 'off');
+            }
+        });
+
+        const searchForm = document.getElementById('search-form');
+        const searchInput = document.getElementById('place');
+        const posters = document.querySelectorAll('.poster');
+        const resultContainer = document.getElementById('search-result');
+        const searchPosters = document.getElementById('search-posters');
+
+        searchForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const query = searchInput.value.trim().toLowerCase();
+            searchPosters.innerHTML = '';
+            let found = false;
+
+            posters.forEach(poster => {
+                const titleAttr = poster.dataset.title;
+                if(!titleAttr) return;
+                const title = titleAttr.toLowerCase();
+                if(title.includes(query)){
+                    const clone = poster.cloneNode(true);
+                    searchPosters.appendChild(clone);
+                    found = true;
+                }
+            });
+
+            resultContainer.style.display = 'block';
+            if(!found){
+                searchPosters.innerHTML = '<p>Filmas nerastas.</p>';
+            }
+        });
+
+        const menuToggle = document.getElementById('menuToggle');
+        const menuList = document.querySelector('#menu ul');
+
+        menuToggle.addEventListener('click', () => {
+            menuList.classList.toggle('show');
+        });
+    </script>
+</html>
